@@ -23,15 +23,15 @@ class User(AbstractUser):
         blank=True,
         max_length=255,
     )
-    phone = models.IntegerField(
-        max_length=256,
+    mobile = models.IntegerField(
         null=True,
         blank=True,
+        max_length=256,
     )
     email = models.EmailField(
-        max_length=254,
         null=True,
         blank=True,
+        max_length=254,
     )
 
     def get_absolute_url(self):
