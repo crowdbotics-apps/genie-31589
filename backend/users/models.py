@@ -23,11 +23,6 @@ class User(AbstractUser):
         blank=True,
         max_length=255,
     )
-    phone = models.IntegerField(
-        null=True,
-        blank=True,
-        max_length=256,
-    )
     email = models.EmailField(
         null=True,
         blank=True,
