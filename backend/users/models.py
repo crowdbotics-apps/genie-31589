@@ -23,7 +23,7 @@ class User(AbstractUser):
         blank=True,
         max_length=255,
     )
-    mobile = models.IntegerField(
+    phone = models.IntegerField(
         null=True,
         blank=True,
         max_length=256,
