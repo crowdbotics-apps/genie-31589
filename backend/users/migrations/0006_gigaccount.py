@@ -8,17 +8,32 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('users', '0005_remove_user_phone'),
+        ("users", "0005_remove_user_phone"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='GigAccount',
+            name="GigAccount",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('phone_number', models.CharField(max_length=256)),
-                ('address', models.TextField()),
-                ('user_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='gigaccount_user_id', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("phone_number", models.CharField(max_length=256)),
+                ("address", models.TextField()),
+                (
+                    "user_id",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="gigaccount_user_id",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
     ]
