@@ -31,3 +31,16 @@ class User(AbstractUser):
 
     def get_absolute_url(self):
         return reverse("users:detail", kwargs={"username": self.username})
+
+
+class GigAccount(models.Model):
+    "Generated Model"
+    phone_number = models.CharField(
+        max_length=256,
+    )
+    address = models.TextField()
+    user_id = models.ForeignKey(
+        "users.User",
+        on_delete=models.CASCADE,
+        related_name="gigaccount_user_id",
+    )
