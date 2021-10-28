@@ -35,12 +35,12 @@ class User(AbstractUser):
 
 class GigAccount(models.Model):
     "Generated Model"
+    phone_number = models.CharField(
+        max_length=256,
+    )
+    address = models.TextField()
     user_id = models.ForeignKey(
         "users.User",
         on_delete=models.CASCADE,
         related_name="gigaccount_user_id",
     )
-    phone_number = models.CharField(
-        max_length=50,
-    )
-    address = models.TextField()
